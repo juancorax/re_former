@@ -30,6 +30,12 @@
 <!--   <%= submit_tag("Submit") %> -->
 <!-- <% end %> -->
 
+<ul>
+  <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
 <%= form_with model: @user do |form| %>
   <%= form.label :username, "Username:" %>
   <%= form.text_field :username %><br>
